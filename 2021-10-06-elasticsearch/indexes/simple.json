@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "properties": {
+      "contents": {
+	"type": "text",
+	"analyzer": "brazilian"
+      }
+    }
+  }
+}

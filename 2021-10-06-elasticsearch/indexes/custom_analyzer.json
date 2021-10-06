@@ -1,0 +1,35 @@
+{
+  "mappings": {
+    "properties": {
+      "contents": {
+        "type": "text",
+        "analyzer": "my_text_analyzer"
+      }
+    }
+  },
+  "settings": {
+    "analysis": {
+      "filter": {
+        "my_stopwords": {
+          "type": "stop",
+          "stopwords": "_brazilian_"
+        },
+        "my_stemmer": {
+          "type": "stemmer",
+          "language": "brazilian"
+        }
+      },
+      "analyzer": {
+        "my_text_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "my_stopwords",
+            "my_stemmer"
+          ]
+        }
+      }
+    }
+  }
+}
