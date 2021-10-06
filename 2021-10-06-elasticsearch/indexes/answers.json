@@ -1,0 +1,45 @@
+{
+  "mappings": {
+    "properties": {
+      "contents": {
+        "type": "text",
+        "analyzer": "my_text_analyzer"
+      }
+    }
+  },
+  "settings": {
+    "analysis": {
+      "filter": {
+        "my_stopwords": {
+          "type": "stop",
+          "stopwords": "_brazilian_"
+        },
+        "my_stemmer": {
+          "type": "stemmer",
+          "language": "brazilian"
+        },
+        "my_keywords": {
+          "type": "keyword_marker",
+          "keywords": ["prata", "pratas", "prato", "pratos"]
+        },
+        "my_synonyms": {
+          "type": "synonym",
+          "synonyms": [ "italia, roma" ]
+        }
+      },
+      "analyzer": {
+        "my_text_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "my_stopwords",
+            "my_synonyms",
+            "my_keywords",
+            "my_stemmer"
+          ]
+        }
+      }
+    }
+  }
+}

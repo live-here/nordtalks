@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match": {
+      "contents": {
+        "query": "roer",
+        "fuzziness": 2
+      }
+    }
+  }
+}
